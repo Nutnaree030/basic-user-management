@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+
+@layer components {
+  .btn-add-new-user {
+    border-radius: calc(infinity * 1px);
+    background-color: var(--color-violet-500);
+    padding-inline: --spacing(3);
+    padding-block: --spacing(1);
+    margin-left: 100px;
+    font-size: 80%;
+    font-weight: var(--font-weight-semibold);
+    width: 120px;
+    height: 30px;
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-violet-700);
+      }
+    }
+  }
+  .btn-edit {
+    border-radius: calc(infinity * 1px);
+    background-color: var(--color-green-500);
+    padding-inline: --spacing(3);
+    padding-block: --spacing(1);
+    margin: 100px 100px 0 0;
+    font-size: 80%;
+    font-weight: var(--font-weight-semibold);
+    width: 70px;
+    height: 30px;
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-green-700);
+      }
+    }
+  }
+  .btn-delete {
+    border-radius: calc(infinity * 1px);
+    background-color: var(--color-red-500);
+    padding-inline: --spacing(3);
+    padding-block: --spacing(1);
+    margin: 100px 100px 0 0;
+    font-size: 80%;
+    font-weight: var(--font-weight-semibold);
+    width: 70px;
+    height: 30px;
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-700);
+      }
+    }
+  }
+}
